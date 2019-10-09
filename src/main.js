@@ -44,8 +44,16 @@ const bindEvents = () => {
 				break;
 
 			case "2":
+			let startIframe = document.getElementById("startDate");
+			let startDate = startIframe.contentWindow.document.getElementById("datepicker").value;
+			startDate = moment(startDate).format("YYYY-MM-DD");
+			
+			let endIframe = document.getElementById("endDate");
+			let endDate = endIframe.contentWindow.document.getElementById("datepicker").value;
+			endDate = moment(endDate).format("YYYY-MM-DD");
+			// console.log(startDate,endDate);
 				request
-					.getCalendarEvents()
+					.getCalendarEvents(startDate,endDate)
 					.then((res) => {
 						ui.updateOutput(res);
 					})

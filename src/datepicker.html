@@ -6,7 +6,7 @@
     <!-- <link rel="stylesheet" href="css/pikaday.css"> -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
     <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
-
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script> -->
 </head>
 
 <body style="margin:0px;padding:0px;overflow:hidden">
@@ -15,6 +15,7 @@
     <!-- <br> -->
     <input type="text" id="datepicker" class="datepickers">
     <!-- <script src="pikaday.js"></script> -->
+        
     <script>
 
         var picker = new Pikaday(
@@ -22,9 +23,15 @@
                 field: document.getElementById('datepicker'),
                 firstDay: 1,
                 // minDate: new Date(),
+                format:'D MMM YYYY',
+                // onSelect: function () {
+                //     var date = document.createTextNode(this.getMoment().format('DD MMMM YYYY') + ' ');
+                //     document.getElementById('selected').appendChild(date);
+                // },
                 maxDate: new Date(2020, 12, 31),
-                yearRange: [2000, 2020]
+                yearRange: [2019, 2020]
             });
+            // picker.setMoment(moment().dayOfYear(366));
 
     </script>
 </body>
