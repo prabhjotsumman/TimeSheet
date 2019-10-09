@@ -104,8 +104,9 @@ iframe {
 
 .container-table100 {
   width: 100%;
-  min-height: 80%;
+  max-height: 80%;
   position: absolute;
+  top:250px;
   bottom: 0;
   align-content: center;
   /* background: #c850c0;
