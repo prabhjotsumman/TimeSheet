@@ -8,7 +8,9 @@ let ui = {
 	},
 
 	updateOutput: (res) => {
-		document.getElementById("output").innerHTML = JSON.stringify(res);
+		// document.getElementById("output").innerHTML = JSON.stringify(res);
+		// console.log(res);
+		JSONToCSVConvertor(res.value, "Timesheet Data", false);
 		let tableBody = document.getElementById("tableBody");
 		tableBody.innerHTML += `<tr>
 									<td class="column1"></td>
