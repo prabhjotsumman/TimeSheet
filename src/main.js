@@ -31,31 +31,35 @@ const bindEvents = () => {
 	let requestsDOM = document.getElementById("requests");
 	requestsDOM.addEventListener("click", (elem, event) => {
 		let id = elem.srcElement.getAttribute("cell");
+		let startIframe = document.getElementById("startDate");
+		let startDate = startIframe.contentWindow.document.getElementById("datepicker").value;
+		startDate = moment(startDate).format("YYYY-MM-DD");
+
+		let endIframe = document.getElementById("endDate");
+		let endDate = endIframe.contentWindow.document.getElementById("datepicker").value;
+		endDate = moment(endDate).format("YYYY-MM-DD");
 		switch (id) {
-			case "1":
+
+			case "2":
+			
+			// console.log(startDate,endDate);
 				request
-					.getUserDetails()
+					.getCalendarEvents(startDate,endDate)
 					.then((res) => {
 						ui.updateOutput(res);
+
 					})
 					.catch((error) => {
 						ui.updateOutput(error);
 					});
 				break;
 
-			case "2":
-			let startIframe = document.getElementById("startDate");
-			let startDate = startIframe.contentWindow.document.getElementById("datepicker").value;
-			startDate = moment(startDate).format("YYYY-MM-DD");
-			
-			let endIframe = document.getElementById("endDate");
-			let endDate = endIframe.contentWindow.document.getElementById("datepicker").value;
-			endDate = moment(endDate).format("YYYY-MM-DD");
-			// console.log(startDate,endDate);
+				case "3":
 				request
-					.getCalendarEvents(startDate,endDate)
+					.getCalendarEvents(startDate, endDate)
 					.then((res) => {
-						ui.updateOutput(res);
+						JSONToCSVConvertor(res.value, "TimeSheet", true);
+
 					})
 					.catch((error) => {
 						ui.updateOutput(error);

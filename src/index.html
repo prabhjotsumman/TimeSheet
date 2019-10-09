@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>TimeSheet</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,8 +41,8 @@
 		html {
 			margin: 0;
 			padding: 0;
-			height: 100%;
-			overflow: hidden;
+			height: 100vh;
+			overflow: visible;
 			background: #c850c0;
 			background: -webkit-linear-gradient(45deg, #4158d0, #c850c0);
 			background: -o-linear-gradient(45deg, #4158d0, #c850c0);
@@ -77,6 +78,14 @@
 			padding: 5px 0px;
 			color: white;
 		}
+
+		#exportbtn {
+			visibility: hidden;
+		}
+
+		#noEventsErrorMsg {
+			text-align: center;
+		}
 	</style>
 </head>
 
@@ -91,52 +100,60 @@
 				<h6>End Date</h6>
 				<iframe id="endDate" width="100%" height="100%" frameborder="0" src="datepicker.html"></iframe>
 			</div>
-			<div class="calendarBtn">
-				<button id="requests" cell="2" class="example_c" type="button">Calender Events</button>
+			<div class="calendarBtn" id="requests">
+				<button cell="2" class="example_c" type="button">Calender Events</button>
+				<button cell="3" id="exportbtn" class="example_c" type="button">Export to Excel</button>
 			</div>
 			<div id="output" style="background:'white';position:'absolute'"></div>
-		</div>
-		<div class="container-table100">
-			<div class="wrap-table100">
-				<div class="table100" id="tableDiv" style="display: none;">
-					<table id="timesheettable">
-						<thead>
-							<tr class="table100-head">
-								<th class="column1">Day</th>
-								<th class="column2">Date and Time</th>
-								<th class="column3">Meeting Topic</th>
-								<th class="column4">Num of Hours</th>
-							</tr>
-						</thead>
-						<tbody id="tableBody">
-							<!-- <tr>
+
+			<div class="container-table100" id="noEventsErrorMsg" style="display: none;">
+				<div class="wrap-table100">
+					<div class="table100">
+						<h4>No Events Found for this date range.</h4>
+					</div>
+				</div>
+			</div>
+			<div class="container-table100">
+				<div class="wrap-table100">
+					<div class="table100" id="tableDiv" style="display: none;">
+						<table id="timesheettable">
+							<thead>
+								<tr class="table100-head">
+									<th class="column1">Day</th>
+									<th class="column2">Date and Time</th>
+									<th class="column3">Meeting Topic</th>
+									<th class="column4">Num of Hours</th>
+								</tr>
+							</thead>
+							<tbody id="tableBody">
+								<!-- <tr>
 									<td class="column1">Monday</td>
 									<td class="column2">2017-09-29 01:22</td>
 									<td class="column3">Backlog Fixture</td>
 									<td class="column4">1</td>
 								</tr> -->
-						</tbody>
-					</table>
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<script>
-		var picker = new Pikaday(
-			{
-				field: document.getElementById('datepicker'),
-				firstDay: 1,
-				minDate: new Date(),
-				maxDate: new Date(2020, 12, 31),
-				yearRange: [2000, 2020]
-			});
-	</script>
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script src="vendor/select2/select2.min.js"></script>
-	<script src="js/main.js"></script>
+		<script>
+			var picker = new Pikaday(
+				{
+					field: document.getElementById('datepicker'),
+					firstDay: 1,
+					minDate: new Date(),
+					maxDate: new Date(2020, 12, 31),
+					yearRange: [2000, 2020]
+				});
+		</script>
+		<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+		<script src="vendor/bootstrap/js/popper.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+		<script src="vendor/select2/select2.min.js"></script>
+		<script src="js/main.js"></script>
 </body>
 
 </html>

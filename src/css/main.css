@@ -104,7 +104,10 @@ iframe {
 
 .container-table100 {
   width: 100%;
-  min-height: 100vh;
+  min-height: 80%;
+  position: absolute;
+  bottom: 0;
+  align-content: center;
   /* background: #c850c0;
   background: -webkit-linear-gradient(45deg, #4158d0, #c850c0);
   background: -o-linear-gradient(45deg, #4158d0, #c850c0);
@@ -124,6 +127,7 @@ iframe {
 
 .wrap-table100 {
   width: 1100px;
+  margin-bottom: 10px;
 }
 
 table {
