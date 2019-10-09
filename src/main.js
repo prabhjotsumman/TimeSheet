@@ -45,7 +45,7 @@ const bindEvents = () => {
 
 			case "2":
 				request
-					.getMyDriveFiles()
+					.getCalendarEvents()
 					.then((res) => {
 						ui.updateOutput(res);
 					})

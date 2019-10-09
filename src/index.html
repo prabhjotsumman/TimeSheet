@@ -47,7 +47,11 @@
 		<script src="js/picker.date.js"></script> -->
 	<link rel="stylesheet" type="text/css" href="./main.css" />
 	<script>
-			// $('.datepicker').pickadate();
+			// let startIframe = document.getElementById("startDate");
+			// let startDate = startIframe.contentWindow.document.getElementById("datepicker").value;
+			// let endIframe = document.getElementById("endDate");
+			// let endDate = endIframe.contentWindow.document.getElementById("datepicker").value;
+			// console.log(startDate,endDate);
 	</script>
 	<style type="text/css">
 		body,
@@ -106,9 +110,12 @@
 					<iframe id="endDate" width="100%" height="100%" frameborder="0" src="datepicker.html"></iframe>
 				</div>
 				<div class="calendarBtn">
-					<button id="requests" class="example_c" type="button">Calender Events</button>
+					<button id="requests" cell="2" class="example_c" type="button">Calender Events</button>
 				</div>
-				
+				<!-- <div class="calendarBtn">
+					<button id="download" class="example_c" type="button">Download Excel</button>
+				</div> -->
+				<div id="output" style="background:'white';position:'absolute'"></div>
 			</div>
 			<div class="container-table100">
 				<div class="wrap-table100">

@@ -62,36 +62,13 @@ let request = {
 		}
 	},
 
-	getMyDriveFiles: async () => {
+	getCalendarEvents: async () => {
 		try {
-			let res = await client.api('/me/calendar/events').get();
+			let res = await client.api("/me/calendar/events")
+				.filter("start/dateTime ge '2019-10-08T00:00' and start/dateTime le '2019-10-10T23:59'")
+				.select("start,end,subject")
+			.get();
 			return res;
-		} catch (error) {
-			throw error;
-		}
-	},
-
-	getMyMails: async () => {
-		try {
-			let res = await client.api("/me/messages").get();
-			return res;
-		} catch (error) {
-			throw error;
-		}
-	},
-
-	uploadLargeFile: async () => {
-		let file = document.getElementById("largeFileUpload").files[0];
-		try {
-			let options = {
-				path: "/Documents",
-				fileName: file.name,
-				rangeSize: 5 * 1024 * 1024,
-			};
-			const uploadTask = await MicrosoftGraph.OneDriveLargeFileUploadTask.create(client, file, options);
-			const response = await uploadTask.upload();
-			ui.updateOutput(response);
-			return response;
 		} catch (error) {
 			throw error;
 		}
