@@ -53,6 +53,13 @@ function JSONToCSVConvertor(JSONData, ReportTitle, ShowLabel) {
             } else {
                 topic = arrData[i][feildsRequired[j]];
                 newArr.push(day, dateTime, topic, duration);
+                let tableBody = document.getElementById("tableBody");
+                tableBody.innerHTML += `<tr>
+									<td class="column1">${day}</td>
+									<td class="column2">${dateTime}</td>
+									<td class="column3">${topic}</td>
+									<td class="column4">${duration}</td>
+								</tr>`;
             }
         }
 
