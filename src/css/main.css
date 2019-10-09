@@ -14,7 +14,7 @@
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
 * {
-	margin: 0px; 
+	margin: auto; 
 	padding: 0px; 
 	box-sizing: border-box;
 }
@@ -105,11 +105,11 @@ iframe {
 .container-table100 {
   width: 100%;
   min-height: 100vh;
-  background: #c850c0;
+  /* background: #c850c0;
   background: -webkit-linear-gradient(45deg, #4158d0, #c850c0);
   background: -o-linear-gradient(45deg, #4158d0, #c850c0);
   background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
-  background: linear-gradient(45deg, #4158d0, #c850c0);
+  background: linear-gradient(45deg, #4158d0, #c850c0); */
 
   display: -webkit-box;
   display: -webkit-flex;
