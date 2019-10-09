@@ -53,20 +53,6 @@ const bindEvents = () => {
 						ui.updateOutput(error);
 					});
 				break;
-
-			case "3":
-				request
-					.getMyMails()
-					.then((res) => {
-						ui.updateOutput(res);
-					})
-					.catch((error) => {
-						ui.updateOutput(error);
-					});
-				break;
-
-			case "4":
-				break;
 		}
 	});
 };
