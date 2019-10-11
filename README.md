@@ -27,10 +27,11 @@ For interacting with the Office 365 applications, Microsoft provides Microsoft-G
 ![microsoft_graph_API_gateway](https://raw.githubusercontent.com/Prabhnith/TimeSheet/master/screenshots/microsoft_graph_API_gateway.JPG)
 
 ### To fetch the calendar events, Microsoft-Graph API is used
-![microsoft_graph_explorer.JPG](https://raw.githubusercontent.com/Prabhnith/TimeSheet/master/screenshots/microsoft_graph_explorer.JPG
+![microsoft_graph_explorer.JPG](https://raw.githubusercontent.com/Prabhnith/TimeSheet/master/screenshots/microsoft_graph_explorer.JPG)
 
 ### Final SPA
 In the SPA, date range option is selected to select the range of events that we want to query for and it will show the meetings/events for that time span when "CALENDAR EVENTS" button is clicked.  
+
 ![Homescreen](https://raw.githubusercontent.com/Prabhnith/TimeSheet/master/screenshots/homescreen.JPG)
 
 This table can be saved as excel also.
